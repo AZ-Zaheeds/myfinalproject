@@ -1,0 +1,138 @@
+/* styles.css */
+
+/* Reset some default styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color:  #282a35;
+    color: #333;
+}
+
+/* Container for the news feed */
+.newsfeed-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.newsfeed-container h1 {
+    text-align: center;
+    color: #04aa6d;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    position: relative;
+}
+
+.newsfeed-container h1::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background-color: #04aa6d;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Individual news item */
+.news-item {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 15px 0;
+    position: relative;
+}
+
+/* Title of the news item */
+.news-item h3 {
+    margin: 0;
+    font-size: 1.5em;
+    color:  #282a35;
+    cursor: pointer;
+    position: relative;
+    padding-right: 30px; /* Space for the tick icon */
+    transition: color 0.3s;
+}
+
+.news-item h3:hover {
+    color:  #282a35;
+}
+
+/* Double tick icon */
+.news-item h3 .tick-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 1em;
+    color:#04aa6d;
+    display: none; /* Hidden by default */
+    transition: opacity 0.3s;
+}
+
+/* Date */
+.news-item .date {
+    font-size: 0.9em;
+    color: #888;
+    margin-top: 5px;
+}
+
+/* Hidden content by default */
+.news-item p {
+    display: none;
+    margin-top: 15px;
+    line-height: 1.6;
+    color: #555;
+    padding-left: 20px;
+    border-left: 4px solid #04aa6d;
+    transition: all 0.3s ease;
+}
+
+/* Active state for news item */
+.news-item.active h3 {
+    color: #0056b3;
+}
+
+.news-item.active h3 .tick-icon {
+    display: inline;
+    opacity: 1;
+}
+
+.news-item.active p {
+    display: block;
+}
+
+/* No news message */
+.no-news {
+    text-align: center;
+    color: #777;
+    font-size: 1.2em;
+    margin-top: 40px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .newsfeed-container {
+        padding: 15px 20px;
+    }
+
+    .newsfeed-container h1 {
+        font-size: 2em;
+    }
+
+    .news-item h3 {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 480px) {
+    .news-item h3 {
+        font-size: 1.1em;
+        padding-right: 25px;
+    }
+
+    .news-item h3 .tick-icon {
+        font-size: 0.9em;
+    }
+}
